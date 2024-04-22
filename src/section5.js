@@ -146,3 +146,10 @@ console.log(Infinity) // 양의 무한대 표현 = 다른 언어에서는 무한
 console.log(-Infinity) // 음의 무한대 표현
 console.log(1/0)
 console.log(-1/0)
+
+/**
+ * 4강
+ * 데이터 타입
+ * 프리미티브 타입
+ * number
+ */
