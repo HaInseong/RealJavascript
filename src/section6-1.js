@@ -2,8 +2,9 @@
  * 1강
  * 객체 Object
  * js에서 객체는 여러 속성을 가지고 있다.
- * - 속성 = key: value
+ * - 속성 = 'key': value
  * key는 문자열과 Symbol만 될 수 있고, value는 함수, 객체, primitive타입도 될 수 있다.
+ * key는 자스에서 자동으로 ''를 붙여준다.
  */
 const jerry = {
     name: 'Jerry',
@@ -11,24 +12,28 @@ const jerry = {
     job: 'Student'
 };
 // # 객체 생성 방법
-// 1. {}
+// 1. {} = 오브젝트 리터럴, 객체 리터럴이라 한다.
 const emptyObject = {};
 // 2. Object()
 const emptyObject2 = new Object();
-
-const person = {};
+const person = {}; // 빈 객체 생성
+// 객체를 만들면 속성을 자우롭게 추가 가능
 console.log(person.name);
-person.name = 'CodingMax';
+person.name = 'CodingMax'; // name 속성 동적으로 정의
 console.log(person.name)
-person['age'] = 20;
+person['age'] = 20; // age 속성 동적으로 정의
 console.log(person.age, person['age'])
+
+
+
 
 if (person.name) {
     console.log(person.name)
     console.log(person['name']);
 }
 
-delete person.name // ★ person은 const인데 어떻게 변경이 가능한지? person의 주소값을 변경하는게 아니라 person이 가지고 있는 주소값에 해당하는 객체를 변경하는 것이므로 가능하다.
+delete person.name // ★ person은 const인데 어떻게 변경이 가능한지? 
+// person의 주소값을 변경하는게 아니라 person이 가지고 있는 주소값에 해당하는 객체를 변경하는 것이므로 가능하다.
 
 if ('name' in person) {
     console.log(person.name);
