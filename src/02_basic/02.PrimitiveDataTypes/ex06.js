@@ -3,12 +3,22 @@ console.log("========================================6강=======================
 /**
  * 6강
  * boolean 타입
+ * boolean => True, False
+ * 논리를 다룰 수 있는 데이터 타입이기 때문에
+ * 알고리즘 => 알고리즘의 근간이 되는 것 입니다.
+ * 프로그래밍의 근간이 되는 것임.
  */
-// 자동차 운전시 신호등
+
+
+// 횡단보도를 건넌다.
+// 신호등의 불빛 색깔을 본다.
+// 1. 기다린다. => 파란불이 될 때까지
+// 2. 그냥 무시하고 건넌다.
+// 3. 아니면 다른 횡단보도로 간다.
 let trafficLightColor = 'blue';
 let stopDrive = false;
 
-if (trafficLightColor === 'red') {
+if (trafficLightColor === 'red') { 
     stopDrive = true;
 } else if (trafficLightColor === 'yellow') {
     stopDrive = true;
@@ -46,16 +56,16 @@ if (aaaa) { // Boolean값을 만들지 않고 바로 조건문에 넣어서 Bool
     console.log('true입니다.')
 }
 function testParams(a) {
-    if(!a) { // ★ a가 null이거나 undefined라면 true가 된다. 특정 값의 유효성 검사할 때 사용 자주 함.
+    if(!a) { // ★ a가 null이거나 undefined라면 true가 된다.(a의 값이 없을 때 true) 특정 값의 유효성 검사할 때 사용 자주 함.
         console.log('값이 존재하지 않습니다.')
         return null;
     }
     console.log(`값이 있습니다. ${a}`)
     return a;
 }
-testParams(12)
-testParams('')
-testParams(null)
-testParams()
-testParams(undefined)
+testParams(12) 
+testParams('') // false로 간주
+testParams(null) // false로 간주
+testParams() // false로 간주
+testParams(undefined) // false로 간주
 testParams('Hello')
