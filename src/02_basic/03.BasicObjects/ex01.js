@@ -16,8 +16,9 @@ const jerry = {
 const emptyObject = {};
 // 2. Object()
 const emptyObject2 = new Object();
+
 const person = {}; // 빈 객체 생성
-// 객체를 만들면 속성을 자우롭게 추가 가능
+// 객체를 만들면 속성을 자유롭게 추가 가능
 console.log(person.name);
 person.name = 'CodingMax'; // name 속성 동적으로 정의
 console.log(person.name)
