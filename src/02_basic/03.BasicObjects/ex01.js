@@ -24,9 +24,7 @@ person.name = 'CodingMax'; // name 속성 동적으로 정의
 console.log(person.name)
 person['age'] = 20; // age 속성 동적으로 정의
 console.log(person.age, person['age'])
-
-
-
+console.log(person.address)
 
 if (person.name) {
     console.log(person.name)
@@ -46,8 +44,6 @@ if ('address' in person) {
     console.log(person['address']);
 }
 
-// 객체 분해 또는 객체 구조 분해
-// Object destructuring
 const inseong = {
     name: 'Levi',
     age: 34,
@@ -59,14 +55,17 @@ const dog = {
     name: 'Coco',
     age: 2
 }
-const { name, age } = inseong;
-const { name: myDogName, age: myDogAge} = dog;
+// 객체 분해 또는 객체 구조 분해 = 객체에 매번 .(점) 연산자로 접근하기 번거롭기 때문에 사용
+// Object destructuring
+const { name, age } = inseong; // inseong 객체의 속성값이 자동으로 변수에 저장된다.
 console.log({ name, age });
+const { name: myDogName, age: myDogAge} = dog;
 console.log({ myDogName, myDogAge })
+const { address: { city }} = inseong; // 객체 안에 객체의 속성 구조분해 방법
 
-const { address: { city }} = inseong;
 console.log({ city })
-// 객체 메서드
+
+// 객체 메서드 = 객체의 속성의 값으로 함수도 가질 수 있다.
 const calculator = {
     add: function (a, b) { // value에 함수
         return a + b;
@@ -75,23 +74,24 @@ const calculator = {
         return a - b;
     }
 };
-console.log(calculator.add(20, 10))
+console.log(calculator.add(20, 10)) // ★ 객체메서드는 속성키에 접근하여 함수처럼 호출함.
 console.log(calculator.sub(20, 10))
-console.log(calculator['add'](20, 10))
 
+console.log(calculator['add'](20, 10))
 function operator(op, a, b) {
     return calculator[op](a, b); // ★ [] 표기법 사용시 op값에 따라 동적으로 메서드 사용 가능
 }
+console.log('add test1: ' + operator('add', 10, 20))
+console.log('sub test2:' + operator('sub', 20, 10))
 
 let op = 'add';
 let code = '-';
 if (code === '-') {
     op = 'sub';
 }
-console.log(operator('add', 10, 20))
-console.log(operator('sub', 20, 10))
 console.log(operator(op, 10, 20))
 
+// this 키워드: 현재 객체를 가르키는 pointer 변수
 const profile = {
     name: 'CodingMax',
     age: 10,
@@ -104,15 +104,16 @@ const profile = {
         `);
     }
 };
-profile.greeting('Jim');
+profile.greeting('Inseong');
+
 // Object
 // Obejct.keys(), Object.values()
-console.log(Object.keys(profile))
-console.log(Object.values(profile))
-for(const key of Object.keys(profile)) {
+console.log(Object.keys(profile)) // profile객체가 가지고 있는 모든 속성의 키값이 출력된다.
+console.log(Object.values(profile)) // profile객체가 가지고 있는 모든 속성의 값이 출력된다.
+for(const key of Object.keys(profile)) { // Object.keys(), Object.key() 함수들은 for문에서 많이 사용됩니다.
     console.log(profile[key]);
 }
-for(const key in profile) { // profile이 가지고 있는 모든 속성의 모든 키값들 마다 루프를 돌면서 key에 담아준다.
+for(const key in profile) { // profile이 가지고 있는 속성의 모든 키값들을 루프를 돌면서 key에 담아준다. = for of문 쓰지마라.
     console.log(`${key} = ${profile[key]}`);
 }
 // 객체 = 속성(값, 데이터) + 메서드(알고리즘)
