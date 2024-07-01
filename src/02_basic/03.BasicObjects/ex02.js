@@ -53,7 +53,7 @@ console.log(chars2[firstIndex])
 console.log(chars2[lastIndex])
 
 const emptyArray3 = [];
-const lastIndex2 = emptyArray3.length - 1;
+const lastIndex2 = emptyArray3.length - 1; // 배열의 끝
 console.log({lastIndex2});
 if(lastIndex2 > 0) {
     //... 배열은 유효성 체크해주는 코드가 좋다.
